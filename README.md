@@ -1,45 +1,29 @@
-# Filtered-PRM-for-MoDs-aware-Motion-Planning
-DEMO CODE COMING SOON
+# Filtered PRM* for Maps of Dynamics-Aware Motion Planning
 
-My Aalto university master's thesis
+Master's thesis, Aalto University, 2026
 
-Technologies used: C++, Python, OMPL, CMake, Linux, Aalto Triton HPC 
+**Technologies:** C++, Python, OMPL, CMake, Linux, Aalto Triton HPC
 
-## My contributions
+## Overview
 
-- Developed and evaluated a probabilistic connection-filtering approach for the PRM* robot motion-planning algorithm, using Maps of Dynamics to influence roadmap construction.
-- Implemented the proposed filtering method in an existing C++/OMPL motion-planning framework.
-- Developed experimental and analysis workflows using Python. Designed experiments used real pedestrian tracking data to compare path quality markers and simulated interference with people.
+Developed and evaluated a probabilistic connection filter for the PRM*
+robot motion-planning algorithm. The filter uses Maps of Dynamics (MoDs)
+during roadmap construction to preferentially reject connections with high
+MoD cost.
+
+The implementation was integrated into an existing C++/OMPL research
+motion-planning framework. I also developed Python workflows for running
+and analysing experiments using real pedestrian tracking data.
 
 ## Results
-- Reduced the number of roadmap edges by 32.7% on average while retaining a 100% solution success rate across the tested conditions.
-- Showed that smaller roadmaps provided only modest query-time improvements and did not improve overall solution cost.
 
-## Abstract 
-Successful deployment of mobile robots in human environments requires motion 
-planning methods that account for the common human motion patterns in that 
-environment. Maps of Dynamics (MoDs) are able to capture such motion patterns 
-learned from observations. This information can be integrated into motion 
-planners to guide robots toward paths that better conform to the environment. 
+- Reduced roadmap edge count by **32.7% on average**
+- Maintained a **100% solution success rate**
+- Smaller roadmaps produced only modest query-time improvements
+- Filtering did not improve overall solution cost compared with regular PRM*
 
-The objective of this thesis is to study whether MoD-aware probabilistic roadmap 
-planning (PRM*) can be improved by utilizing MoD information during roadmap 
-construction. A probabilistic MoD-informed connection filter is proposed which 
-rejects candidate connections with high MoD costs with a higher probability. The 
-motivation for this is to reduce the number of less desirable connections and 
-thereby improve query efficiency and solution quality. The experimental setup 
-includes intensity, GMMT, and CLiFF MoD representations, and the MoD-filtered 
-PRM* is compared to regular MoD-informed PRM* and a baseline randomly 
-filtered PRM*. The experiments use pedestrian tracking data collected from a 
-shopping center and evaluate roadmap size, query time, solution cost, success rate, 
-and simulated interference with people. 
+## Note
 
-The proposed filter was successful in reducing the number of edges in the roadmap 
-while maintaining a 100% success rate. However, the total solution cost increased 
-for all  three MoD representations at matched query times. The baseline random 
-filter also outperformed the MoD-filter in terms of total cost. The interference 
-results were more mixed as intensity-based filtering produced a small reduction in 
-interference, whereas GMMT and CLiFF filtering did not provide a consistent 
-advantage. These results tell us that the proposed MoD-aware filter did not improve 
-MoD-informed PRM*. Future filtering methods should also account for the global 
-structural importance of each connection. 
+The thesis extended an existing research codebase that I do not have
+permission to redistribute. I will add code for a demonstration of the 
+filtered prm* in the future
