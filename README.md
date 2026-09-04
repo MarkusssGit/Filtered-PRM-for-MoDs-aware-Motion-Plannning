@@ -1,4 +1,4 @@
-# Filtered-PRM-for-MoDs-aware-Motion-Plannning
+# Filtered-PRM-for-MoDs-aware-Motion-Planning
 DEMO CODE COMING SOON
 
 My Aalto university master's thesis
